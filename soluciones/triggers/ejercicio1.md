@@ -13,7 +13,7 @@ on:
       - main
 
 jobs:
-  build:
+  Primer workflow:
     runs-on: labs-runner
     
     steps:
@@ -22,10 +22,8 @@ jobs:
 ```
 
 El workflow va a tener el nombre "Ejercicio Trigger 1" para la rama *main* en un contenedor *labs-runner* que nos ha dado Stemdo.
-Creamos un nuevo pull-request:
-![alt text](../../auxiliar/trigger1.2.png)
-
-Aquí estaría ejecutándose, como estabamos todos con ello pues tardaba mucho
-![alt text](../../auxiliar/trigger1.png)
+Creamos un nuevo pull-request y esta sería la vista desde la pantalla "Actions"
 
 Para que esto se ejecute he creado la rama *prueba* , he añadido los nuevos archivos y he hecho un commit. 
+Se ha ejecutado correctamente!
+![alt text](../../auxiliar/trigger.png)

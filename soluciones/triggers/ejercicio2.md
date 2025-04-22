@@ -21,11 +21,8 @@ jobs:
         run: echo "Hello, World!"
 "
 ```
+Ejecuto un git add . , git commit y un git push para que se suba el workflow al repositorio y poder ejecutarlo
+Se ha ejecutado correctamente:
+![alt text](../../auxiliar/trigger1.2.png)
 
-Adjunto las imágenes que muestran el proceso:
-
-![alt text](../../auxiliar/trigger2.png)
-
-![alt text](../../auxiliar/trigger2.1.png)
-
-![alt text](../../auxiliar/trigger2.2.png)
+![alt text](../../auxiliar/holamundo.png)
