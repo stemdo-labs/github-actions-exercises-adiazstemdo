@@ -31,4 +31,5 @@ jobs:
         run: echo "Entorno seleccionado: ${{ github.event.inputs.environment }}"   # Mostramos el valor 
 ```
 
-y al igual que en ejercicios anteriores hariamos un git add ., un commit y luego un git push
+y al igual que en ejercicios anteriores hariamos un git add ., un commit y luego un git push y este sería el resultado:
+
