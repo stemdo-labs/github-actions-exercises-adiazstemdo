@@ -1,4 +1,4 @@
-name: Dispatch 2
+name: Ejercicio Dispatch 2
 
 on:
   workflow_dispatch:  # Nos permite ejecutar el workflow manualmente desde Github
