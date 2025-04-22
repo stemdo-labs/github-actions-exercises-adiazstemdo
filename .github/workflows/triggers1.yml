@@ -1,0 +1,11 @@
+name: Ejercicio Trigger 1
+
+on: pull
+
+jobs:
+  build:
+    runs-on: labs-runner
+    
+    steps:
+     - name: Mostrar mensaje
+       run: echo "Workflow creado"
