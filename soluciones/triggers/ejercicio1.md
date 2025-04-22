@@ -27,3 +27,5 @@ Creamos un nuevo pull-request:
 
 Aquí estaría ejecutándose, como estabamos todos con ello pues tardaba mucho
 ![alt text](../../auxiliar/trigger1.png)
+
+Para que esto se ejecute he creado la rama *prueba* , he añadido los nuevos archivos y he hecho un commit. 

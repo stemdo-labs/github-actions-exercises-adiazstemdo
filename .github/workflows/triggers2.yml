@@ -6,9 +6,13 @@ on:
       - develop
 
 jobs:
+  Hola-Mundo:
   build:
     runs-on: labs-runner
     
     steps:
-     - name: Mostrar mensaje
-       run: echo "Hello World!"
+      - name: comprobar código
+        uses: actions/checkout@v3
+
+      - name: Mostrar Hello World
+        run: echo "Hello, World!"
