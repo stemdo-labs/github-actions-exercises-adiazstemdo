@@ -1,0 +1,14 @@
+name: Ejercicio Trigger 2
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  build:
+    runs-on: labs-runner
+    
+    steps:
+     - name: Mostrar mensaje
+       run: echo "Hello World!"
