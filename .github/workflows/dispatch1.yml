@@ -1,0 +1,17 @@
+name: Imprimir Mensaje Personalizado
+
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: 'Mensaje personalizado para imprimir'
+        required: true
+        default: 'Stemdo'
+
+jobs:
+  imprimir-mensaje:
+    runs-on: labs-runner
+
+    steps:
+      - name: Mostrar mensaje
+        run: echo "${{ github.event.inputs.message }}"
