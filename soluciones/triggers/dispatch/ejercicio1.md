@@ -28,3 +28,6 @@ jobs:
         run: echo "${{ github.event.inputs.message }}"
 ```
 
+Desde la rama *Develop* he creado el pull, al igual que en los ejercicios anteriores y este es el resultado:
+
+![alt text](../../../auxiliar/dispatch1.png)
