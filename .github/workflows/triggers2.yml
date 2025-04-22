@@ -1,4 +1,4 @@
-name: Ejercicio Trigger 2
+name: Hola Mundo en Develop
 
 on:
   push:
@@ -7,12 +7,8 @@ on:
 
 jobs:
   Hola-Mundo:
-  build:
     runs-on: labs-runner
-    
-    steps:
-      - name: comprobar código
-        uses: actions/checkout@v3
 
-      - name: Mostrar Hello World
-        run: echo "Hola Mundo"
+    steps:
+      - name: Imprimir Hola Mundo
+        run: echo "Hello, World!"
