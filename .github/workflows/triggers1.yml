@@ -1,6 +1,9 @@
 name: Ejercicio Trigger 1
 
-on: pull
+on:
+  pull_request:
+  branches:
+    - pruebas
 
 jobs:
   build:
