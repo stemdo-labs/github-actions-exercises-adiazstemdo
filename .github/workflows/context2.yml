@@ -1,0 +1,30 @@
+name: Despliegue
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener nombre de la rama
+        id: branch
+        run: echo "BRANCH_NAME=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
+
+      - name: Elegir API Key adecuada
+        id: set-api-key
+        run: |
+          if [ "${{ env.BRANCH_NAME }}" == "main" ]; then
+            echo "API_KEY=${{ secrets.PROD_API_KEY }}" >> $GITHUB_ENV
+            echo "USO_API=PROD_API_KEY" >> $GITHUB_ENV
+          else
+            echo "API_KEY=${{ secrets.STAGING_API_KEY }}" >> $GITHUB_ENV
+            echo "USO_API=STAGING_API_KEY" >> $GITHUB_ENV
+          fi
+
+      - name: Comando de despliegue ficticio
+        run: |
+          echo "Ejecutando despliegue con API Key: $API_KEY"
+          echo "Se utilizó el secreto: $USO_API"
