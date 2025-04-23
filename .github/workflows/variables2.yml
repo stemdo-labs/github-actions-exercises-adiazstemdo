@@ -13,3 +13,5 @@ jobs:
       - name: Guardar secreto en variables
         env:
           secreto: ${{ secrets.MISECRETO }}
+        run: |
+          echo "El secreto es: $secreto"
