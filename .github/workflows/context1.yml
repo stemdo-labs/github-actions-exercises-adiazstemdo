@@ -1,12 +1,10 @@
 name: Información del Runner
 
-on:
-  workflow_dispatch:
 
 jobs:
     mostrar_infomación_runner:
-      runs-on: labs-runner
-      permissions: write-all
+    runs-on: labs-runner
+    permissions: write-all
 
     steps:
       - name: Mostrar nombre del sistema operativo
