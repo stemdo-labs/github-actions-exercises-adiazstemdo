@@ -13,8 +13,8 @@ on:
           - staging
 
 jobs:
-  print-environment:
+  Dispatch2:
     runs-on: labs-runner
     steps:
       - name: Mostrar entorno seleccionado
-        run: echo "Entorno seleccionado: ${{ github.event.inputs.environment }}" # Mostramos el valor
+        run: echo "Entorno seleccionado ${{ github.event.inputs.environment }}"

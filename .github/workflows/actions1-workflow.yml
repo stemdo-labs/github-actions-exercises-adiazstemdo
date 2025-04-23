@@ -14,8 +14,13 @@ jobs:
       - name: Ejecutar acción personalizada
         uses: ./.github/actions/crear-archivo
         with:
+<<<<<<< HEAD
           filename: saludo.txt
           message: "¡Este es el archivo creado por Alejandro Díaz"
+=======
+          filename: archivo-stemdo.txt
+          message: "¡Este es el archivo creado por Alejandro Díaz en Stemdo!"
+>>>>>>> 938a722f06d245def5a031716ad43dc0b99ef9be
 
 
       - name: Configurar Git
@@ -23,8 +28,11 @@ jobs:
           git config user.name "github-actions [bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+<<<<<<< HEAD
       - name: Añadir archivos y pushear
         run: |
           git add .
           git commit -m "Auto-commit desde workflow"
           git push
+=======
+>>>>>>> 938a722f06d245def5a031716ad43dc0b99ef9be
