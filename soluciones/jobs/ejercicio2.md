@@ -34,3 +34,10 @@ jobs:
         run: echo "El job deploy funciona."
 ```
 
+Como he simulado un error me sale que hay un fallo y no se ejecuta correctamente:
+![alt text](../../auxiliar/jobs2.png)
+
+Ahora vamos a arreglar el error y vamos a ver que ocurre:
+![alt text](../../auxiliar/jobs2.1.png)
+
+Se ve claramente que tanto el build como el deply han funcionado
