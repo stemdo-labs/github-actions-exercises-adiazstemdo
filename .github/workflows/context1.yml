@@ -1,0 +1,24 @@
+name: Información del Runner
+
+on:
+  workflow_dispatch:
+
+jobs:
+  runner-información:
+    runs-on: labs-runner
+
+    steps:
+      - name: Mostrar nombre del sistema operativo
+        run: echo "Sistema operativo: $(uname -s)"
+
+      - name: Mostrar arquitectura del sistema
+        run: echo "Arquitectura: $(uname -m)"
+
+      - name: Mostrar información completa del sistema
+        run: uname -a
+
+      - name: Mostrar espacio en disco disponible
+        run: df -h
+
+      - name: Mostrar información del runner (env)
+        run: env | grep RUNNER
