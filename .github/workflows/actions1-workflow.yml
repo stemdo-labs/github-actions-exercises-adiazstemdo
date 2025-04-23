@@ -1,10 +1,10 @@
-name: Test Custom Action Without Script
+name: Ejecutando la creación del archivo
 
 on:
   workflow_dispatch:
 
 jobs:
-  test-custom-action:
+  Ejecucion-del-workflow:
     permissions: write-all
     runs-on: labs-runner
     steps:
