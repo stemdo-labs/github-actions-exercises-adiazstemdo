@@ -7,6 +7,8 @@
 - Utilizar el contexto secrets para inyectar la API Key correspondiente en un comando de despliegue ficticio.
 - Imprimir un mensaje indicando cuál API Key se utilizó.
 
+
+
 ```
 name: Despliegue
 
@@ -39,5 +41,6 @@ jobs:
           echo "Ejecutando despliegue con API Key: $API_KEY"
           echo "Se utilizó el secreto: $USO_API"
 ```
-
+El IF que he usado me lo ha dado el chat para elegir la API key correcta
+Ejecuto el workflow y este es el resultado:
 ![alt text](../../auxiliar/context2.png)

@@ -1,0 +1,20 @@
+name: Variables de Entorno en Workflow
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  example-job:
+    runs-on: labs-runner
+
+    steps:
+      - name: Definir variables de entorno
+        run: |
+          echo "VAR1=Alejandro" >> $GITHUB_ENV
+          echo "VAR2=Díaz" >> $GITHUB_ENV
+
+      - name: Usar las variables de entorno
+        run: |
+          echo "Mi nombre es: $VAR1 $VAR2"
