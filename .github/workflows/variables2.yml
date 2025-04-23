@@ -13,4 +13,4 @@ jobs:
       - name: Usar secreto en un comando
         run: |
           echo "Usando el secreto en un comando."
-          echo "El valor del secreto es: $MI_SECRETO"
+          echo "El valor del secreto es: $MISECRETO"
