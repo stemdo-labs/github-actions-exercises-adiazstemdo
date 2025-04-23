@@ -23,8 +23,3 @@ jobs:
           git config user.name "github-actions [bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Añadir archivos y pushear
-        run: |
-          git add .
-          git commit -m "Auto-commit desde workflow"
-          git push
