@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: labs-runner
     steps:
       - name: Obtener nombre de la rama
         id: branch
