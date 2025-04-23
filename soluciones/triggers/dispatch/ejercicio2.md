@@ -9,7 +9,7 @@
 He creado el archivo en la carpeta workflow/ llamado dispatch2.yml
 
 ```
-name: Dispatch 2
+name: Ejercicio Dispatch 2
 
 on:
   workflow_dispatch:  # Nos permite ejecutar el workflow manualmente desde Github
@@ -24,12 +24,14 @@ on:
           - staging
 
 jobs:
-  print-environment:
+  Dispatch2:
     runs-on: labs-runner
     steps:
       - name: Mostrar entorno seleccionado
-        run: echo "Entorno seleccionado: ${{ github.event.inputs.environment }}"   # Mostramos el valor 
+        run: echo "Entorno seleccionado ${{ github.event.inputs.environment }}" 
 ```
 
-y al igual que en ejercicios anteriores hariamos un git add ., un commit y luego un git push y este sería el resultado:
+y al igual que en ejercicios anteriores hariamos un git add ., un commit y luego un git push.
+Entro en GitHub y este sería el resultado:
 
+![alt text](../../../auxiliar/dispatch2.png)
