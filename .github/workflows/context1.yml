@@ -9,10 +9,10 @@ jobs:
 
     steps:
       - name: Mostrar nombre del sistema operativo
-        run: echo "Sistema operativo: $(uname -s)"
+        run: echo "Sistema operativo $(uname -s)"
 
       - name: Mostrar arquitectura del sistema
-        run: echo "Arquitectura: $(uname -m)"
+        run: echo "Arquitectura $(uname -m)"
 
       - name: Mostrar información completa del sistema
         run: uname -a
