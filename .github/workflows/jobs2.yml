@@ -13,7 +13,7 @@ jobs:
       - name: Build step (simulado)
         run: |
           echo "Ejecutando proceso de build..."
-          exit 1
+          # exit 1
 
   deploy:
     runs-on: ubuntu-latest
