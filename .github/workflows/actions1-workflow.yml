@@ -14,8 +14,8 @@ jobs:
       - name: Ejecutar acción personalizada
         uses: ./.github/actions/crear-archivo
         with:
-          filename: saludo.txt
-          message: "¡Hola desde una acción personalizada sin script!"
+          filename: archivo-stemdo.txt
+          message: "¡Este es el archivo creado por Alejandro Díaz en Stemdo!"
 
 
       - name: Configurar Git
