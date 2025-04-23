@@ -1,0 +1,14 @@
+name: Probar acción personalizada - Autor del último commit
+
+on:
+  workflow_dispatch:
+
+jobs:
+  show-author:
+    runs-on: labs-runner
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v3
+
+      - name: Usar acción personalizada
+        uses: ./.github/actions/ultimo-creador
