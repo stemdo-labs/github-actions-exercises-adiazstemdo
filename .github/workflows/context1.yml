@@ -1,8 +1,7 @@
 name: Información del Runner
 
-
 jobs:
-    mostrar_infomación_del_runner:
+  mostrar_información_del_runner:
     runs-on: labs-runner
     permissions: write-all
 
