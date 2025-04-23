@@ -4,8 +4,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  runner-información:
+  mostrar-infomación-runner:
     runs-on: labs-runner
+    permissions: write-all
 
     steps:
       - name: Mostrar nombre del sistema operativo
