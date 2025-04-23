@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  show-author:
+  ultimo-creador:
     runs-on: labs-runner
     steps:
       - name: Checkout del repositorio
