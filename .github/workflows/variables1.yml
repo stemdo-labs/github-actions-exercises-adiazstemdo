@@ -1,13 +1,3 @@
-# Variables y Outputs - Ejercicio 1
-
-## Configura un workflow con un solo job que haga las siguientes tareas
-
-- En el primer step, define dos variables de entorno.
-- En el segundo step, usa estas variables para ejecutar un comando o script.
-
-Este ejercicio es bastante sencillito ya que la creación de variables es igual que en bash
-
-```
 name: Variables de Entorno en Workflow
 
 on:
@@ -28,6 +18,3 @@ jobs:
       - name: Usar las variables de entorno
         run: |
           echo "Mi nombre es: $VAR1 $VAR2"
-```
-
-![alt text](../../auxiliar/variables1.png)

@@ -1,0 +1,16 @@
+name: Workflow con Secreto
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  example-job:
+    runs-on: labs-runner
+
+    steps:
+      - name: Usar secreto en un comando
+        run: |
+          echo "Usando el secreto en un comando."
+          echo "El valor del secreto es: $MISECRETO"
