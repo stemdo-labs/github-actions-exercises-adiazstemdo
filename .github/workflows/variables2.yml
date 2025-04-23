@@ -6,11 +6,12 @@ on:
       - '**'
 
 jobs:
-  example-job:
+  variable-secreto:
     runs-on: labs-runner
 
     steps:
-      - name: Usar secreto en un comando
+      - name: Guardar secreto en variables
+        env:
+          secreto: ${{ secrets.MISECRETO }}
         run: |
-          echo "Usando el secreto en un comando."
-          echo "El valor del secreto es: $MISECRETO"
+          echo "El secreto es: $secreto"
