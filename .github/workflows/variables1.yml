@@ -6,7 +6,7 @@ on:
       - '**'
 
 jobs:
-  example-job:
+  variables:
     runs-on: labs-runner
 
     steps:
