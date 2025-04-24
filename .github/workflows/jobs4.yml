@@ -1,15 +1,3 @@
-# Jobs - Ejercicio 4
-
-## 1. Crea un job el cual cree un archivo .txt llamado "test"
-
-## 2. Crea otro job que mueva el archivo creado anteriormente a otro directorio. ¿Qué es lo que ocurre?
-
-### ¿Qué ocurre?
-
-
-Para este ejercicio he creado dos jobs, uno para crear el archivo y el otro para mover el archivo
-
-```
 name: Crear y Mover Archivo en el Mismo Workflow
 
 on:
@@ -41,8 +29,7 @@ jobs:
 
       - name: Mover el archivo a otro directorio
         run: |
-          mkdir destino                          # Creo la carpeta     
-          mv test.txt destino/                   # Muevo el archivo a la carpeta    
+          mkdir destino                               
+          mv test.txt destino/                        
           echo "Contenido de 'destino/'"
-          ls destino/                            # Listo el contenido de la carpeta para ver que se ha movido correctamente
-```
+          ls destino/                         
