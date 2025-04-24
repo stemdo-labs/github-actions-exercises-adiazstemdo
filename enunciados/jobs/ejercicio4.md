@@ -19,7 +19,7 @@ on:
 
 jobs:
   crear-archivo:
-    runs-on: ubuntu-latest
+    runs-on: labs-runner
     steps:
       - name: Crear archivo test.txt
         run: echo "Este es un archivo de prueba" > test.txt   # Aquí estoy rediriegiendo la salida de echo a un archivo llamado test.txt
@@ -31,7 +31,7 @@ jobs:
           path: test.txt
 
   mover-archivo:
-    runs-on: ubuntu-latest
+    runs-on: labs-runner
     needs: crear-archivo
     steps:
       - name: Descargar el archivo
@@ -46,3 +46,5 @@ jobs:
           echo "Contenido de 'destino/'"
           ls destino/                            # Listo el contenido de la carpeta para ver que se ha movido correctamente
 ```
+
+![alt text](../../auxiliar/jobs4.png)
