@@ -30,4 +30,8 @@ jobs:
           echo "Mi nombre es: $VAR1 $VAR2"
 ```
 
+> VAR1=Alejandro >> $GITHUB_ENV
+Redirigimos la salida a una variable de entorno de Github.
+Pusheamos el workflow y lo ejecutamos.
+
 ![alt text](../../auxiliar/variables1.png)
