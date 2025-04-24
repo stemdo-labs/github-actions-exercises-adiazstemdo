@@ -1,0 +1,18 @@
+name: Ejecutar en múltiples SO
+
+on:
+  push:
+    branches:
+      - feature
+
+jobs:
+  prueba-en-sistemas:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+
+    steps:
+      - name: Mostrar sistema operativo
+        run: echo "Este job está corriendo en ${{ matrix.os }}"
+        shell: bash
