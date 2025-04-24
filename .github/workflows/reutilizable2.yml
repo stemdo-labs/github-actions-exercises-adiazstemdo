@@ -13,13 +13,13 @@ jobs:
     outputs:
       es_feature: ${{ steps.verificar.outputs.es_feature }}
     steps:
-      - name: Verificar si la rama es "feature/*"
+      - name: Verificar si la rama es "feature*"
         id: verificar
         run: |
           BRANCH_NAME="${GITHUB_REF#refs/heads/}"
           echo "Nombre de la rama: $BRANCH_NAME"
           
-          if [[ "$BRANCH_NAME" == feature/* ]]; then
+          if [[ "$BRANCH_NAME" == feature* ]]; then
             echo "es_feature=true" >> $GITHUB_OUTPUT
           else
             echo "es_feature=false" >> $GITHUB_OUTPUT
