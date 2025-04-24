@@ -1,0 +1,10 @@
+name: Usar Validación de Rama
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  llamar-workflow:
+    uses: ./.github/workflows/reutilizable2.yml

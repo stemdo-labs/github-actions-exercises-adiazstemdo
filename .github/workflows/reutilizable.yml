@@ -9,4 +9,4 @@ jobs:
   llamar-principal:
     uses: ./.github/workflows/principal.yml
     with:
-      mensaje: "Hola desde el workflow principal 🎉"
+      mensaje: "Hola desde el workflow principal"
