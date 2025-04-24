@@ -1,0 +1,12 @@
+name: Trigger 4 Programado
+
+on:
+  schedule:
+    - cron: '0 8 * * 1-5'  # Se ejecuta de Lunes a Viernes a las 8:00 que es cuando entro a Stemdo
+
+jobs:
+  programado:
+    runs-on: labs-runner
+    steps:
+      - name: Imprimir mensaje
+        run: echo "Scheduled job executed!"
