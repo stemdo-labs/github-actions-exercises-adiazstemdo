@@ -1,0 +1,70 @@
+name: Ejercicio Variables 5
+
+on:
+  push:
+    branches:
+      - '**'  # Se ejecuta en cualquier rama
+
+jobs:
+  # Primer Job: Variables entre pasos de un mismo job
+  variables-steps:
+    runs-on: labs-runner
+    steps:
+      - name: Definir y imprimir var1
+        run: |
+          var1=1
+          echo "var1=$var1"
+
+      - name: Definir var2 usando $GITHUB_ENV
+        run: |
+          echo "var2=2" >> $GITHUB_ENV
+
+      - name: Imprimir var2 en otro step
+        run: |
+          echo "El valor de var2 es: $var2"
+
+  # Segundo Job: Compartir variables entre pasos usando outputs
+  compartir-variables:
+    runs-on: labs-runner
+    steps:
+      - name: Definir output var_step_output
+        id: step1
+        run: |
+          echo "::set-output name=var_step_output::valor"
+
+      - name: Imprimir output var_step_output
+        run: |
+          echo "El valor de var_step_output es: ${{ steps.step1.outputs.var_step_output }}"
+
+  # Tercer Job: Compartir variables entre jobs
+  variables-entre-jobs:
+    runs-on: labs-runner
+    outputs:
+      var3: 3
+    steps:
+      - name: Imprimir el valor de var2 (no está definida, por lo que fallará)
+        run: |
+          echo "El valor de var2 es: $var2"
+
+      - name: Definir output var3
+        run: |
+          echo "::set-output name=var3::3"
+
+  # Cuarto Job: Imprimir variables entre jobs
+  echo-variables:
+    needs: job3
+    runs-on: labs-runner
+    steps:
+      - name: Imprimir el valor de var3 desde job3
+        run: |
+          echo "El valor de var3 desde job3 es: ${{ needs.job3.outputs.var3 }}"
+
+  # Quinto Job: Usar variables predefinidas de GitHub
+  default-variables:
+    runs-on: labs-runner
+    steps:
+      - name: Imprimir variables predefinidas
+        run: |
+          echo "Nombre del repositorio: $GITHUB_REPOSITORY"
+          echo "Nombre de la rama: $GITHUB_REF"
+          echo "Evento que activó el workflow: $GITHUB_EVENT_NAME"
