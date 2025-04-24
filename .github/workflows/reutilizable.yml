@@ -1,0 +1,12 @@
+name: Llamando al Workflow principal
+
+on:
+  push:
+    branches:
+      - '**' # Se ejecuta en cualquier rama
+
+jobs:
+  llamar-principal:
+    uses: ./.github/workflows/principal.yml
+    with:
+      mensaje: "Hola desde el workflow principal 🎉"

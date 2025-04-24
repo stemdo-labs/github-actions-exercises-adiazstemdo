@@ -40,24 +40,24 @@ jobs:
   variables-entre-jobs:
     runs-on: labs-runner
     outputs:
-      var3: 3
+      var3: ${{ steps.definir.outputs.var3 }}
     steps:
       - name: Imprimir el valor de var2 (no está definida, por lo que fallará)
         run: |
           echo "El valor de var2 es: $var2"
 
       - name: Definir output var3
-        run: |
-          echo "::set-output name=var3::3"
+        id: definir
+        run: echo "var3=3" >> $GITHUB_OUTPUT
 
   # Cuarto Job: Imprimir variables entre jobs
   echo-variables:
-    needs: job3
+    needs: variables-entre-jobs
     runs-on: labs-runner
     steps:
-      - name: Imprimir el valor de var3 desde job3
+      - name: Imprimir el valor de var3 desde job anterior
         run: |
-          echo "El valor de var3 desde job3 es: ${{ needs.job3.outputs.var3 }}"
+          echo "El valor de var3 desde job anterior es: ${{ needs.variables-entre-jobs.outputs.var3 }}"
 
   # Quinto Job: Usar variables predefinidas de GitHub
   default-variables:

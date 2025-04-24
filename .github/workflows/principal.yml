@@ -1,0 +1,15 @@
+name: Workflow Principal
+
+on:
+  workflow_call:    # Este workflow solo se ejecutará cuando haya otro workflow que lo llame
+    inputs:
+      mensaje:
+        required: true
+        type: string
+
+jobs:
+  imprimir-mensaje:
+    runs-on: labs-runner
+    steps:
+      - name: Imprimir el mensaje
+        run: echo "Mensaje recibido: ${{ inputs.mensaje }}"
