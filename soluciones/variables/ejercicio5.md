@@ -34,3 +34,6 @@ Usar variables predefinidas de GitHub:
   - Nombre del ``repositorio``.
   - Nombre de la ``rama``.
   - Nombre del ``evento`` que activó el workflow.
+
+---
+
