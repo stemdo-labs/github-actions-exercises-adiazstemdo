@@ -8,3 +8,5 @@ on:
 jobs:
   llamar-workflow:
     uses: ./.github/workflows/reutilizable2.yml
+    with:
+      mensaje: "Alejandro Díaz en Stemdo"
