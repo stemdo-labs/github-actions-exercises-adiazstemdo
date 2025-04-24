@@ -1,0 +1,14 @@
+name: Ejecutar en creación de Issue
+
+on:
+  issues:
+    types: [opened]  # Esto ejecuta el workflow cuando se abre una nueva Issue
+
+jobs:
+  ejecutar-al-crear-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Imprimir mensaje cuando se crea una issue
+        run: |
+          echo "Se ha creado una nueva issue con el título: ${{ github.event.issue.title }}"
+          echo "Descripción de la issue: ${{ github.event.issue.body }}"

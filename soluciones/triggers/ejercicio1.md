@@ -10,11 +10,11 @@ name: Ejercicio Trigger 1
 on:
   pull_request:
     branches:
-      - main
+      - main       # Para que se ejecute en la rama 'main'
 
 jobs:
   Primer workflow:
-    runs-on: labs-runner
+    runs-on: labs-runner    # Este es el runner en el que va a correr el workflow que nos ha proporcionado Stemdo
     
     steps:
      - name: Mostrar mensaje

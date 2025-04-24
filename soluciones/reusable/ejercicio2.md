@@ -62,5 +62,6 @@ jobs:
 ```
 
 Evidentemente como no es la rama feature no se ha ejecutado el workflow
-
+Aún así, he probado a crear la rama *feature* para ver si se ejecutaba, lo he pusheado desde ahí y tampoco me ha funcionado, a mis compañeros tampoco
+![alt text](../../auxiliar/reutilizable2.2.png)
 ![alt text](../../auxiliar/reutilizable2.png)
