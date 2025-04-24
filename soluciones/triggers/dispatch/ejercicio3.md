@@ -37,3 +37,5 @@ jobs:
 ```
 
 He hecho un if como condición para que nos de la respuesta según sea True o False
+Lo ejecuto manualmente y este es el resultado
+![alt text](../../../auxiliar/dispatch3.png)

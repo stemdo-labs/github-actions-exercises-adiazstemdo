@@ -7,7 +7,7 @@
 - Listar los archivos en el directorio actual.
 - Hacer un commit y push de cualquier fichero en el repositorio.
 
-Para que este ejercicio me funcionara he tenido que crear un repositorio público.
+Para que este ejercicio me funcionara he tenido que crear un repositorio público ya que en el privado de stemdo no funcionaba.
 Creo el yml llamado jobs1.yml con el siguiente código:
 
 ```
@@ -18,7 +18,7 @@ on:
 
 jobs:
   run-tasks:
-    runs-on: ubuntu-latest
+    runs-on: labs-runner
 
     steps:
       - name: 
@@ -47,6 +47,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 ```
+Creo que esto también se podría hacer con variables de entorno del propio github
 
 Se ejecuta correctamente:
 ![alt text](../../auxiliar/jobs1.png)
