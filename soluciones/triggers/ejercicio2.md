@@ -18,7 +18,7 @@ jobs:
 
     steps:
       - name: Imprimir Hola Mundo
-        run: echo "Hello, World!"
+        run: echo "Hola Mundo"
 "
 ```
 Ejecuto un git add . , git commit y un git push para que se suba el workflow al repositorio y poder ejecutarlo
