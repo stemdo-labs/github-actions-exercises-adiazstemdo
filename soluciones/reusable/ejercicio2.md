@@ -56,5 +56,8 @@ on:
 jobs:
   llamar-workflow:
     uses: ./.github/workflows/reutilizable2.yml   # Ruta de mi workflow con los dos jobs anteriormente descritos
+    with:
+      mensaje: "Alejandro Díaz en Stemdo"
 
 ```
+
