@@ -19,3 +19,5 @@ jobs:
         run: echo "Scheduled job executed!"
 
 ```
+Ejecuto el workflow y evidentemente no se ejecuta por que no es la hora marcada
+![alt text](../../auxiliar/trigger4.png)
