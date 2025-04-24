@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Verificar archivo existente
         run: |
-          if [ -f "archivo.txt" ]; then
+          if [ -f "saludo.txt" ]; then
             echo "El archivo existe, continuando con la carga..."
           else
             echo "El archivo no existe."
@@ -25,7 +25,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: archivo-existente
-          path: archivo.txt
+          path: saludo.txt
 
   mostrar-contenido:
     runs-on: labs-runner
@@ -38,5 +38,5 @@ jobs:
 
       - name: Mostrar el contenido del archivo
         run: |
-          cat archivo.txt
+          cat saludo.txt
 ```
