@@ -31,7 +31,7 @@ jobs:
         if: always()  # Para que se ejecute independientemente del estado anterior
         run: |
           echo "Enviando notificación..."
-          curl -X POST https://www.stemdo.io/ \             # URL de Stemdo
+          curl -X POST https://www.google.com/ \             # URL de Stemdo
             -H "Content-Type: application/json" \
             -d '{
               "estado": "${{ job.status }}",
