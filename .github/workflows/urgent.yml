@@ -1,4 +1,4 @@
-name: Urgent
+name: Urgente
 
 on:
   pull_request:
