@@ -1,0 +1,23 @@
+name: Número aleatorio
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  numero-aleatorio:
+    runs-on: labs-runner
+
+    steps:
+      - name: Generar número aleatorio
+        env:
+          aleatorio: $((1 + RANDOM % 100))
+
+        run: |
+          echo "El núero aleatorio es: $aleatorio"
+    
+      - name: Verificar si aleatorio es mayor que 50
+        if: ${{ env.aleatorio > 50 }}
+        run: |
+          echo "El número aleatorio es mayor que 50"
