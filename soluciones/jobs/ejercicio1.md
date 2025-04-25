@@ -7,6 +7,7 @@
 - Listar los archivos en el directorio actual.
 - Hacer un commit y push de cualquier fichero en el repositorio.
 
+---
 Para que este ejercicio me funcionara he tenido que crear un repositorio público ya que en el privado de stemdo no funcionaba.
 Creo el yml llamado jobs1.yml con el siguiente código:
 
