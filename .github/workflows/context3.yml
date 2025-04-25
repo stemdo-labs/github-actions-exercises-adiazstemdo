@@ -1,0 +1,31 @@
+name: Notificación a Stemdo
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  tarea-ficticia:
+    runs-on: labs-runner
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v3
+
+      - name: Tarea ficticia
+        run: |
+          echo "Esto es solo un echo..."
+          sleep 2
+          echo "Tarea completada."
+
+      - name: Enviar notificación
+        if: always()  # Se ejecuta sin importar si los pasos anteriores fallan o tienen éxito
+        run: |
+          echo "Enviando notificación..."
+          curl -X POST https://www.stemdo.io/ \   
+            -H "Content-Type: application/json" \
+            -d '{
+              "estado": "${{ job.status }}",
+              "evento": "${{ github.event_name }}"
+            }'
+          echo "Notificación enviada."

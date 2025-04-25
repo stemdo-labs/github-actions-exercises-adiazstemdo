@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Verificar archivo existente
         run: |
-          if [ -f "saludo.txt" ]; then
+          if [ -f "saludo.txt" ]; then                              # Para verificar si existe el archivo y muestre un mensaje
             echo "El archivo existe, continuando con la carga..."
           else
             echo "El archivo no existe."
@@ -38,5 +38,8 @@ jobs:
 
       - name: Mostrar el contenido del archivo
         run: |
-          cat saludo.txt
+          cat saludo.txt                            # Muestra el contenido del archivo si existe
 ```
+
+No se ejecuta correctamente ya que el archivo no existe
+![alt text](../../auxiliar/actions3.png)
