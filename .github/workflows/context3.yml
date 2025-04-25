@@ -1,4 +1,4 @@
-name: Notificación a Google
+name: Notificación a Stemdo
 
 on:
   push:
