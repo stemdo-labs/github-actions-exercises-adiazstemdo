@@ -4,7 +4,7 @@
 
 En la documentación no encontré nada acerca de los estados en los workflows así que pedí ayuda tanto a chatGPT como a compañeros
 Resulta que con ***if(always)*** se ejecuta el workflow sin importar si los steps anteriores funcionan o no.
-Con el *curl* envío la notificación a la URL de stemdo
+Con el *curl* envío la notificación a la URL de Google
 
 ```
 name: Notificación a Stemdo
