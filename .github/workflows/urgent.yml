@@ -16,7 +16,7 @@ jobs:
 
           echo "Título de la PR: $titulo"
 
-          if [[ "$titulo" == *urgent* || "$titulo" == *URGENT* ]]; then
+          if [[ "$titulo" == *urgent* ]]; then
             echo "Título SI contiene 'urgent'"
             echo "Cuerpo de la PR: $cuerpo"
           else

@@ -17,12 +17,12 @@ jobs:
     steps:
       - name: Comprobar si el título contiene "urgent"
         run: |
-          titulo="${{ github.event.pull_request.title }}"
+          titulo="${{ github.event.pull_request.title }}"   # Creo una variable que recoja el título y el nombre del cuerpo de la pull request
           cuerpo="${{ github.event.pull_request.body }}"
 
           echo "Título de la PR: $titulo"
 
-          if [[ "$titulo" == *urgent* || "$titulo" == *URGENT* ]]; then
+          if [[ "$titulo" == *urgent* ]]; then
             echo "Título SI contiene 'urgent'"
             echo "Cuerpo de la PR: $cuerpo"
           else
@@ -31,3 +31,5 @@ jobs:
           fi
 
 ```
+
+![alt text](../../auxiliar/context4.png)
