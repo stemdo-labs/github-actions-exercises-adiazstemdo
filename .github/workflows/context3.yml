@@ -22,7 +22,7 @@ jobs:
         if: always()  # Se ejecuta sin importar si los pasos anteriores fallan o tienen éxito
         run: |
           echo "Enviando notificación..."
-          curl -X POST https://www.stemdo.io/ \   
+          curl -X POST https://www.google.com \   
             -H "Content-Type: application/json" \
             -d '{
               "estado": "${{ job.status }}",
