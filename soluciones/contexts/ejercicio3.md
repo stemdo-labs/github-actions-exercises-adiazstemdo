@@ -4,7 +4,8 @@
 
 En la documentación no encontré nada acerca de los estados en los workflows así que pedí ayuda tanto a chatGPT como a compañeros
 Resulta que con ***if(always)*** se ejecuta el workflow sin importar si los steps anteriores funcionan o no.
-Con el *curl* envío la notificación a la URL de stemdo
+Con el *curl* envío la notificación a la URL de Stemdo
+He estado investigando y a parte del ***if(always)*** hay más estados como **success**, **failure** y **cancelled**
 
 ```
 name: Notificación a Stemdo
@@ -31,7 +32,7 @@ jobs:
         if: always()  # Para que se ejecute independientemente del estado anterior
         run: |
           echo "Enviando notificación..."
-          curl -X POST https://www.stemdo.io/ \             # URL de Stemdo
+          curl -X POST https://www.google.com/ \             # URL de Stemdo
             -H "Content-Type: application/json" \
             -d '{
               "estado": "${{ job.status }}",
@@ -39,3 +40,6 @@ jobs:
             }'
           echo "Notificación enviada."
 ```
+
+Este sería el resultado, tanto la tarea ficticia como la notificación a la URL de stemdo se ejecutan perfectamente
+![alt text](../../auxiliar/context3.png)

@@ -1,0 +1,23 @@
+name: Número aleatorio
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  numero-aleatorio:
+    runs-on: labs-runner
+
+    steps:
+      - name: Generar número aleatorio
+        id: aleatorio
+        run: |
+          numero=$(( (RANDOM % 100) + 1 ))
+          echo "Número generado es: $numero"
+          echo "numero=$numero" >> $GITHUB_OUTPUT
+      
+      - name: Verificar si aleatorio es mayor que 50
+        if: ${{ steps.random.outputs.numero > 50 }}
+        run: |
+          echo "El número ${{ steps.random.outputs.numero }} es mayor a 50"

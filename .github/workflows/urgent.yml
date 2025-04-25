@@ -1,0 +1,25 @@
+name: Urgente
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  verificar-palabra:
+    runs-on: labs-runner
+
+    steps:
+      - name: Comprobar si el título contiene "urgent"
+        run: |
+          titulo="${{ github.event.pull_request.title }}"
+          cuerpo="${{ github.event.pull_request.body }}"
+
+          echo "Título de la PR: $titulo"
+
+          if [[ "$titulo" == *urgent* ]]; then
+            echo "Título SI contiene 'urgent'"
+            echo "Cuerpo de la PR: $cuerpo"
+          else
+            echo "El título no contiene la palabra 'urgent'."
+            exit 1
+          fi
