@@ -28,7 +28,7 @@ jobs:
       - name: Elegir API Key adecuada
         id: set-api-key
         run: |
-          if [ "${{ env.BRANCH_NAME }}" == "main" ]; then
+          if [ "${{ env.BRANCH_NAME }}" == "main" ]; then               # Para este IF he pedido ayuda al chat ya que no sabía bien ya que no sabía bien la sintaxis a la hora de escribir las variables
             echo "API_KEY=${{ secrets.PROD_API_KEY }}" >> $GITHUB_ENV
             echo "USO_API=PROD_API_KEY" >> $GITHUB_ENV
           else
