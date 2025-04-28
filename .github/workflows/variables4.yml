@@ -19,21 +19,21 @@ jobs:
 
       - name: comprobar si existe el archivo config.json
         run: |
-          if [ ! -f ../config.json ]; then
+          if [ ! -f config.json ]; then
             echo "config.json no existe"
             exit 1
           fi
 
       - name: Validar archivo .json
         run: |
-          jq . config.json > /dev/null || { echo "Invalid JSON"; exit 1; }   # Con la herramienta jq Verifica si el archivo JSON es válido. Si no lo es, se imprime un mensaje de error y se sale con un código de error.
+          jq . ../config.json > /dev/null || { echo "Invalid JSON"; exit 1; }  
 
       - name: Version
         id: get_version
         run: |
-          VERSION=$(jq -r '.version' config.json)    # Con jq, extrae el valor de la clave "version" del archivo config.json y lo almacena en la variable VERSION.
+          VERSION=$(jq -r '.version' config.json)    
           echo "App version: $VERSION"
-          echo "app_version=$VERSION" >> $GITHUB_OUTPUT    # Luego, se imprime el valor de la versión y se guarda en la variable de salida app_version para que pueda ser utilizada en otros trabajos del flujo de trabajo.
+          echo "app_version=$VERSION" >> $GITHUB_OUTPUT    
 
   deploy:
     name: Condicional if
