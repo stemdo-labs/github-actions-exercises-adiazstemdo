@@ -19,7 +19,7 @@ jobs:
 
       - name: comprobar si existe el archivo config.json
         run: |
-          if [ ! -f config.json ]; then
+          if [ ! -f ../config.json ]; then
             echo "config.json no existe"
             exit 1
           fi
@@ -37,7 +37,7 @@ jobs:
 
   deploy:
     name: Condicional if
-    needs: Validar archivo .json
+    needs: Validar-config    # Este trabajo depende del trabajo validar-config. No se ejecutará hasta que validar-config haya terminado con éxito.
     runs-on: labs-runner
 
     steps:
