@@ -1,22 +1,3 @@
-# Variables y Outputs - Ejercicio 4
-
-## Configura un workflow que valide un archivo de configuración (config.json) y realice un despliegue condicional a develop o producción basado en la rama desde la cual se hace el push.
-
-### Pasos:
-
-- Verificar que el archivo config.json exista y que tenga el formato JSON válido.
-- Extraer un valor específico del archivo config.json (por ejemplo, la versión de la aplicación) y utilizarlo como un output.
-- Si el push se hace en la rama main, el workflow debería simular un despliegue de la aplicación en producción.
-- Si el push se hace en una rama develop, el workflow debería simular un despliegue de la aplicación en develop.
-- Si el archivo config.json no es válido, el workflow debería fallar y detenerse sin realizar el despliegue.
-
----
-
-En lineas generales, lo que pide este ejercicio es crear un workflow que automatize el proceso de validación de un archivo de configuración y realizar un despliegue condicionalen función de la rama desde la cual se hace el push.
-
-> Con la herramienta *jq* podemos procesar y manipular archivos JSON mediante linea de comandos. En este ejercicio lo utilizo un par de veces y es de suma importancia
-
-```
 name: Variables 4. Validación de json y condicional 
 
 on:
@@ -67,9 +48,3 @@ jobs:
       - name: Despliegue a Desarrollo
         if: github.ref == 'refs/heads/feature'    # Se ejecuta si la rama es develop
         run: echo "Desplegar version ${{ needs.validate-config.outputs.app_version }} a DESARROLLO"
-```
-
-- El workflow se asegura de que el archivo config.json exista y tenga el formato válido
-- Si el archivo no es válido o no existe, el proceso se detiene para evitar errores en el despliegue
-- Extrae la versión de la aplicación del archivo config.json
-- Dependiendo de la rama en la que se haga push nos aparecerá un mensaje u otro
