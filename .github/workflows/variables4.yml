@@ -26,7 +26,7 @@ jobs:
 
       - name: Validar archivo .json
         run: |
-          jq . ../config.json > /dev/null || { echo "Invalid JSON"; exit 1; }  
+          jq . config.json > /dev/null || { echo "Invalid JSON"; exit 1; }  
 
       - name: Version
         id: get_version
@@ -46,5 +46,5 @@ jobs:
         run: echo "Desplegar version ${{ needs.validate-config.outputs.app_version }} a PRODUCCIÓN"
 
       - name: Despliegue a Desarrollo
-        if: github.ref == 'refs/heads/feature'    # Se ejecuta si la rama es develop
-        run: echo "Desplegar version ${{ needs.validate-config.outputs.app_version }} a DESARROLLO"
+        if: github.ref == 'refs/heads/feature'    # Se ejecuta si la rama es feature
+        run: echo "Desplegar version ${{ needs.validate-config.outputs.app_version }} a FEATURE"
