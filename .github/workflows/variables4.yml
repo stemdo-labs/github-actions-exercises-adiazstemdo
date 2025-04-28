@@ -46,5 +46,5 @@ jobs:
         run: echo "Desplegar version ${{ needs.validate-config.outputs.app_version }} a PRODUCCIÓN"
 
       - name: Despliegue a Desarrollo
-        if: github.ref == 'refs/heads/feature'    # Se ejecuta si la rama es develop
-        run: echo "Desplegar version ${{ needs.validate-config.outputs.app_version }} a DESARROLLO"
+        if: github.ref == 'refs/heads/feature'    # Se ejecuta si la rama es feature
+        run: echo "Desplegar version ${{ needs.validate-config.outputs.app_version }} a FEATURE"
