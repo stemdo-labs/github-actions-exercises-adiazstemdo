@@ -19,14 +19,14 @@ jobs:
 
       - name: comprobar si existe el archivo config.json
         run: |
-          if [ ! -f ../config.json ]; then
+          if [ ! -f config.json ]; then
             echo "config.json no existe"
             exit 1
           fi
 
       - name: Validar archivo .json
         run: |
-          jq . config.json > /dev/null || { echo "Invalid JSON"; exit 1; }   # Con la herramienta jq Verifica si el archivo JSON es válido. Si no lo es, se imprime un mensaje de error y se sale con un código de error.
+          jq . ../config.json > /dev/null || { echo "Invalid JSON"; exit 1; }   # Con la herramienta jq Verifica si el archivo JSON es válido. Si no lo es, se imprime un mensaje de error y se sale con un código de error.
 
       - name: Version
         id: get_version
