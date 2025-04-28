@@ -75,3 +75,12 @@ jobs:
 - Si el archivo no es válido o no existe, el proceso se detiene para evitar errores en el despliegue
 - Extrae la versión de la aplicación del archivo config.json
 - Dependiendo de la rama en la que se haga push nos aparecerá un mensaje u otro
+
+En el archivo config.json escribí lo siguiente para que me diera la versión:
+![alt text](../../auxiliar/config.json.png)
+
+Después de ejecutar el workflo este es el resultado:
+
+![alt text](../../auxiliar/variables4.png)
+
+
