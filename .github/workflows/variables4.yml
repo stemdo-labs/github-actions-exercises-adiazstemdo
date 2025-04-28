@@ -26,7 +26,7 @@ jobs:
 
       - name: Validar archivo .json
         run: |
-          jq . ../config.json > /dev/null || { echo "Invalid JSON"; exit 1; }  
+          jq . config.json > /dev/null || { echo "Invalid JSON"; exit 1; }  
 
       - name: Version
         id: get_version
