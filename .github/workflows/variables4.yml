@@ -37,7 +37,7 @@ jobs:
 
   deploy:
     name: Condicional if
-    needs: Validar archivo .json
+    needs: Validar-config    # Este trabajo depende del trabajo validar-config. No se ejecutará hasta que validar-config haya terminado con éxito.
     runs-on: labs-runner
 
     steps:
