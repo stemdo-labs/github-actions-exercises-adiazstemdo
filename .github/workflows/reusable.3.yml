@@ -9,7 +9,6 @@ on:
 jobs:
   trigger-deploy:
     runs-on: ubuntu-latest
-    uses: ./.github/workflows/main.reusable3.yml
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -29,5 +28,6 @@ jobs:
           fi
 
       - name: Llamando a workflow
+        uses: ./.github/workflows/main.reusable3.yml
         with:
           environment: ${{ env.environment }}

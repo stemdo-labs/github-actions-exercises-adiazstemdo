@@ -44,3 +44,81 @@ Creo las variables dentro de cada entorno:
 
 
 Para esta práctica he creado dos workflows en el que uno llamará al otro **(reusable3.yml -> main.reusable3.yml)**
+
+***main.reusable3.yml***
+
+```
+name: Desplegar entorno
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        description: 'Entornos a desplegar (development, staging, production)'
+        required: true
+        type: string
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: variables de entorno
+        run: |
+          echo "API_URL=${{ secrets[inputs.environment + '_API_URL'] }}" >> $GITHUB_ENV
+          echo "LOG_LEVEL=${{ secrets[inputs.environment + '_LOG_LEVEL'] }}" >> $GITHUB_ENV
+
+      - name: Desplegar en ${{ inputs.environment }}
+        run: |
+          echo "Desplegando en ${INPUT_ENVIRONMENT}..."
+          echo "Using API_URL=$API_URL y LOG_LEVEL=$LOG_LEVEL"
+
+      - name: Verificar despliegue
+        run: |
+          echo "Verificando despliegue..."
+          echo "Despliegue en ${INPUT_ENVIRONMENT} verificado con éxito."
+```
+---
+
+***reusable3.yml***
+
+```
+name: Despliegue de Trigger 
+
+on:
+  push:
+    branches:
+      - '**'
+  workflow_dispatch:
+
+jobs:
+  trigger-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Determine deployment environment
+        id: environment
+        run: |
+          if [[ "${GITHUB_REF}" == "refs/heads/main" ]]; then
+            echo "Desplegando a production"
+            echo "environment=production" >> $GITHUB_ENV
+          elif [[ "${GITHUB_REF}" == "refs/heads/develop" ]]; then
+            echo "Desplegando a development"
+            echo "environment=development" >> $GITHUB_ENV
+          elif [[ "${GITHUB_REF}" == refs/heads/release/* ]]; then
+            echo "Desplegando a staging"
+            echo "environment=staging" >> $GITHUB_ENV
+          fi
+
+      - name: Llamando a workflow
+        uses: ./.github/workflows/main.reusable3.yml
+        with:
+          environment: ${{ env.environment }}
+```
+
