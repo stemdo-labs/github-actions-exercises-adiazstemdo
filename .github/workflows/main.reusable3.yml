@@ -1,4 +1,4 @@
-name: Deploy to Environment
+name: Desplegar entorno
 
 on:
   workflow_call:
@@ -10,7 +10,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: labs-runner
+    runs-on: ubuntu-latest
     environment: ${{ inputs.environment }}
     
     steps:
@@ -29,5 +29,5 @@ jobs:
 
       - name: Verificar despliegue
         run: |
-          echo "Verificando depsliegue..."
+          echo "Verificando despliegue..."
           echo "Despliegue en ${INPUT_ENVIRONMENT} verificado con éxito."
