@@ -1,0 +1,33 @@
+name: Deploy to Environment
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        description: 'Entornos a desplegar (development, staging, production)'
+        required: true
+        type: string
+
+jobs:
+  deploy:
+    runs-on: labs-runner
+    environment: ${{ inputs.environment }}
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: variables de entorno
+        run: |
+          echo "API_URL=${{ secrets[inputs.environment + '_API_URL'] }}" >> $GITHUB_ENV
+          echo "LOG_LEVEL=${{ secrets[inputs.environment + '_LOG_LEVEL'] }}" >> $GITHUB_ENV
+
+      - name: Desplegar en ${{ inputs.environment }}
+        run: |
+          echo "Desplegando en ${INPUT_ENVIRONMENT}..."
+          echo "Using API_URL=$API_URL y LOG_LEVEL=$LOG_LEVEL"
+
+      - name: Verificar despliegue
+        run: |
+          echo "Verificando depsliegue..."
+          echo "Despliegue en ${INPUT_ENVIRONMENT} verificado con éxito."
