@@ -10,7 +10,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: labs-runner
+    runs-on: ubuntu-latest
     environment: ${{ inputs.environment }}
     
     steps:

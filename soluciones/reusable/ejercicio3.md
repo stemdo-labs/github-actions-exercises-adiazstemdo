@@ -31,9 +31,16 @@ Para este ejercicio se utilizarán dos repositorios, uno público, y el reposito
 > Crea un archivo llamado trigger-deploy.yml en el directorio .github/workflows/.
 > Este workflow se activará en función de las ramas (main, develop, release/*) y llamará al workflow reutilizable para desplegar en el entorno correspondiente.
 
+---
 
+Para poder entrar a los Entornos primero el repositorio debe de ser público, después se habilitará la pestaña de *Environments*:
 ![alt text](../../auxiliar/reusable3.png)
 
+Creo los entornos:
 ![alt text](../../auxiliar/reusable3.1.png)
 
+Creo las variables dentro de cada entorno:
 ![alt text](../../auxiliar/reusable3.2.png)
+
+
+Para esta práctica he creado dos workflows en el que uno llamará al otro **(reusable3.yml -> main.reusable3.yml)**
