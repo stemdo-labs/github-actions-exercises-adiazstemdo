@@ -30,3 +30,10 @@ Para este ejercicio se utilizarán dos repositorios, uno público, y el reposito
 >
 > Crea un archivo llamado trigger-deploy.yml en el directorio .github/workflows/.
 > Este workflow se activará en función de las ramas (main, develop, release/*) y llamará al workflow reutilizable para desplegar en el entorno correspondiente.
+
+
+![alt text](../../auxiliar/reusable3.png)
+
+![alt text](../../auxiliar/reusable3.1.png)
+
+![alt text](../../auxiliar/reusable3.2.png)

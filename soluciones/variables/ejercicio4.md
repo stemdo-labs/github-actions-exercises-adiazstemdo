@@ -58,7 +58,7 @@ jobs:
 
   deploy:
     name: Condicional if
-    needs: Validar archivo .json
+    needs: Validar-config
     runs-on: labs-runner
 
     steps:
@@ -67,8 +67,8 @@ jobs:
         run: echo "Desplegar version ${{ needs.validate-config.outputs.app_version }} a PRODUCCIÓN"
 
       - name: Despliegue a Desarrollo
-        if: github.ref == 'refs/heads/feature'    # Se ejecuta si la rama es develop
-        run: echo "Desplegar version ${{ needs.validate-config.outputs.app_version }} a DESARROLLO"
+        if: github.ref == 'refs/heads/feature'    # Se ejecuta si la rama es feature
+        run: echo "Desplegar version ${{ needs.validate-config.outputs.app_version }} a FEATURE"
 ```
 
 - El workflow se asegura de que el archivo config.json exista y tenga el formato válido
@@ -83,4 +83,8 @@ Después de ejecutar el workflo este es el resultado:
 
 ![alt text](../../auxiliar/variables4.png)
 
+Esta es la captura del primer job, se ve como me da la versión del archivo .json como lo había escrito
+![alt text](../../auxiliar/variables4.1.png)
 
+Esta es la captura del job con el condicional IF
+![alt text](../../auxiliar/variables4.2.png)
