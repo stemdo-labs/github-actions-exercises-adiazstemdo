@@ -1,4 +1,4 @@
-name: Trigger Deploy
+name: Despliegue de Trigger 
 
 on:
   push:
